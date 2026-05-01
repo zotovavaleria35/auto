@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="catalog-page">
+    <div class="container">
+        <h1 class="catalog-title">Каталог автомобілів</h1>
+        <div class="car-grid">
+            {% for car in cars %}
+            <div class="car-card">
+                <!-- Клікабельне фото -->
+                <a href="{% url 'car_detail' car.id %}">
+                    {% if car.image %}
+                        <img src="{{ car.image.url }}" alt="{{ car.name }}" class="car-img">
+                    {% else %}
+                        <div class="no-photo">Немає фото</div>
+                    {% endif %}
+                </a>
+
+                <div class="car-content">
+                    <div>
+                        <!-- Клікабельна назва -->
+                        <div class="car-name">
+                            <a href="{% url 'car_detail' car.id %}" style="text-decoration: none; color: inherit;">
+                                {{ car.brand.name }} {{ car.name }}
+                            </a>
+                        </div>
+                        <div class="car-country">Країна: {{ car.brand.country|default:"Не вказано" }}</div>
+                        <div class="car-price">${{ car.price }}</div>
+                    </div>
+                    <!-- Клікабельна кнопка -->
+                    <a href="{% url 'car_detail' car.id %}" class="test-drive-btn">Записатись на тест-драйв</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

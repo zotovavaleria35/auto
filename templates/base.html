@@ -1,0 +1,44 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>AUTO DRIVE</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="top-header">
+        <div class="container">
+            <div class="header-flex">
+                <div class="logo">
+                    <a href="/">AUTO<span>DRIVE</span></a>
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="/">ГОЛОВНА</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">МАРКИ ▼</a>
+                            <ul class="dropdown-menu">
+                                {% for brand in brands %}
+                                    <li><a href="{% url 'brand_filter' brand.id %}">{{ brand.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'catalog' %}">КАТАЛОГ</a></li>
+                        <li><a href="{% url 'about' %}">ПРО НАС</a></li>
+                        <li><a href="{% url 'contacts' %}">КОНТАКТИ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="simple-footer">
+        <p>&copy; 2026 AUTO DRIVE. Усі права захищені.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Підключення іконок у блоці контенту, якщо вони не підключені у base.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<main class="main-content">
+    <section class="contacts-map-section">
+        <div class="map-bg">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.234389146193!2d25.3262799!3d50.7528373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472599eb9e7f597b%3A0x67394d69352c38d!2z0KLQpNCaINCb0YPRhtGM0LrQvtCz0L4g0J3QotCj!5e0!3m2!1suk!2sua!4v1714600000000!5m2!1suk!2sua"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="container">
+            <div class="contact-overlay-card">
+                <h2>Контакти</h2>
+                <div class="contact-details">
+                    <p class="address"><strong>м. Луцьк</strong>, вул. Соборності, 1</p>
+                    <p class="phone">+38 (099) 609 - 04 - 71</p>
+                </div>
+
+                <div class="social-icons-row">
+                    <!-- Залишено тільки Facebook, Instagram та TikTok -->
+                    <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+
+                <a href="tel:+380996090471" class="call-action-circle">
+                    <span class="phone-icon">📞</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

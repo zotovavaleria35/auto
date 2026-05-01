@@ -1,13 +1,129 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-    <h1>Головна</h1>
-    <p>{{ content }}</p>
+{% extends 'base.html' %}
 
-    <a href="{% url 'other_page' %}">Перейти на іншу сторінку</a>
-</body>
-</html>
+{% block content %}
+<main class="main-content">
+    <!-- Секція з картинкою (БЕЗ ЗМІН) -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <h1 class="hero-title">Ваш ідеальний автомобіль чекає на вас</h1>
+            <p class="hero-subtitle">Преміальний сервіс та гарантія якості на кожне авто.</p>
+            <a href="{% url 'catalog' %}" class="cta-button">Перейти до вибору</a>
+        </div>
+    </section>
+
+    <!-- Секція переваг (БЕЗ ЗМІН) -->
+    <section class="container features-section">
+        <div class="features-flex">
+            <div class="feature-item">
+                <h3>Гарантія</h3>
+                <p>Надаємо повну технічну гарантію на 12 місяців.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Сервіс</h3>
+                <p>Власна станція технічного обслуговування.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Кредитування</h3>
+                <p>Вигідні умови розтермінування від провідних банків.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВА СЕКЦІЯ: ЧОМУ ОБИРАЮТЬ (БЕЗ СМАЙЛИКІВ) -->
+    <section class="why-us-section">
+        <div class="container">
+            <h2 class="section-heading">Чому обирають AUTODRIVE</h2>
+            <div class="why-us-grid">
+                <div class="why-us-item">
+                    <div class="why-us-content">
+                        <h4>Фіксована ціна</h4>
+                        <p>Гарантуємо незмінність вартості автомобіля після підписання договору без додаткових комісій.</p>
+                    </div>
+                </div>
+                <div class="why-us-item">
+                    <div class="why-us-content">
+                        <h4>Технічний аудит</h4>
+                        <p>Кожна одиниця проходить комплексну перевірку за 150 параметрами перед потраплянням у каталог.</p>
+                    </div>
+                </div>
+                <div class="why-us-item">
+                    <div class="why-us-content">
+                        <h4>Прямі поставки</h4>
+                        <p>Працюємо без посередників з аукціонами США, Європи та Китаю, що знижує кінцеву вартість.</p>
+                    </div>
+                </div>
+                <div class="why-us-item">
+                    <div class="why-us-content">
+                        <h4>Юридичний супровід</h4>
+                        <p>Повний документальний супровід: від моменту торгів до постановки на облік в Україні.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВА СЕКЦІЯ: КНОПКА ЗАПИСУ (ЗАМІСТЬ ФОРМИ) -->
+    <section class="consultation-cta">
+        <div class="container">
+            <div class="cta-black-box">
+                <div class="cta-text">
+                    <h3>Маєте запитання щодо вибору авто?</h3>
+                    <p>Наші експерти допоможуть підібрати найкращий варіант під ваш бюджет та потреби.</p>
+                </div>
+                <a href="{% url 'contacts' %}" class="consult-btn">ЗАПИСАТИСЬ НА КОНСУЛЬТАЦІЮ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВА СЕКЦІЯ: ТЕКСТОВІ ВІДГУКИ З АВАТАРКАМИ -->
+    <section class="customer-reviews">
+        <div class="container">
+            <h2 class="section-heading">Відгуки наших клієнтів</h2>
+            <div class="reviews-flex-container">
+                <!-- Відгук 1 -->
+                <div class="review-item-card">
+                    <div class="review-header">
+                        <div class="user-avatar">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#800000"/>
+                            </svg>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">Олександр Коваль</span>
+                            <span class="review-date">12.04.2026</span>
+                        </div>
+                    </div>
+                    <div class="review-text-content">
+                        <p>Замовляв через AUTODRIVE модель Audi A4. Дуже задоволений професіоналізмом команди. Машина приїхала в ідеальному стані, всі документи оформили швидко. Рекомендую!</p>
+                    </div>
+                    <div class="review-car-tag">Audi A4 | Німеччина</div>
+                </div>
+
+                <!-- Відгук 2 -->
+                <div class="review-item-card">
+                    <div class="review-header">
+                        <div class="user-avatar">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="#800000"/>
+                            </svg>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">Марія Петренко</span>
+                            <span class="review-date">05.03.2026</span>
+                        </div>
+                    </div>
+                    <div class="review-text-content">
+                        <p>Дякую за допомогу у виборі та доставці Toyota Camry. Весь процес був прозорим, постійно отримувала фотозвіти. Дуже зручний сервіс для тих, хто цінує свій час.</p>
+                    </div>
+                    <div class="review-car-tag">Toyota Camry | США</div>
+                </div>
+            </div>
+
+            <!-- Кнопка написання коментаря (заглушка без JS) -->
+            <div class="add-review-container">
+                <a href="#" class="write-review-btn">Написати коментар</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

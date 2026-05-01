@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main-content">
+    <!-- Твоя стандартна текстова секція -->
+    <section class="container text-page">
+        <h2>Про автосалон AutoDrive</h2>
+        <p>AutoDrive — це сучасний автомобільний центр у Луцьку, який об'єднує в собі салон з продажу авто та сертифікований сервісний центр.</p>
+    </section>
+
+    <!-- НОВИЙ БЛОК: ЕКСПЕРТИ З АВТО ІЗ США -->
+    <section class="about-team-section">
+        <div class="container">
+            <div class="about-flex-card">
+                <!-- Ліва частина з текстом -->
+                <div class="about-text-side">
+                    <h2 class="about-heading">Експерти з авто <span>ІЗ США</span></h2>
+                    <p class="about-description">
+                        Наша команда спеціалізується виключно на підборі, перевірці та доставці автомобілів з найбільших аукціонів Америки (Copart, IAAI, Manheim). Ми знаємо всі тонкощі логістики та розмитнення, щоб ви отримали надійне авто з чистою історією.
+                    </p>
+                    <ul class="about-services-list">
+                        <li>Доступ до закритих аукціонів США</li>
+                        <li>Детальна перевірка історії по Carfax</li>
+                        <li>Власна логістика через порти США та Європи</li>
+                        <li>Повний супровід розмитнення та сертифікації</li>
+                        <li>Ремонт під ключ та замовлення запчастин</li>
+                    </ul>
+                </div>
+
+                <!-- Права частина з фотографією -->
+                <div class="about-image-side">
+                    <img src="/static/images/usa-import.jpg" alt="Автомобілі зі США">
+                    <div class="image-overlay-text">AUTO DRIVE</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

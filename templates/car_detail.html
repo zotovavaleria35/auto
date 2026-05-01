@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main-content">
+    <section class="product-detail-section">
+        <div class="container">
+            <div class="product-flex">
+
+                <!-- Ліва частина: Фото -->
+                <div class="product-image-side">
+                    {% if car.image %}
+                        <a href="#full-photo" title="Натисніть, щоб збільшити">
+                            <img src="{{ car.image.url }}" alt="{{ car.brand.name }} {{ car.name }}">
+                        </a>
+
+                        <div id="full-photo" class="modal-overlay">
+                            <a href="#close" class="close-area"></a>
+                            <div class="modal-content">
+                                <img src="{{ car.image.url }}" alt="{{ car.name }}">
+                                <a href="#close" class="close-button">&times;</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="no-photo">Фото відсутнє</div>
+                    {% endif %}
+                </div>
+
+                <!-- Права частина: Інформація -->
+                <div class="product-info-side">
+                    <div class="product-category-label">{{ car.brand.name }}</div>
+                    <h1 class="product-main-title">{{ car.brand.name }} {{ car.name }}</h1>
+
+                    <p class="product-origin"><strong>Країна виробник:</strong> {{ car.brand.country|default:"Не вказано" }}</p>
+
+                    <div class="product-description-box">
+                        <h3>Про автомобіль</h3>
+                        <p>{{ car.description }}</p>
+                    </div>
+
+                    <div class="product-price-large">${{ car.price }}</div>
+
+                    <div class="action-buttons">
+                        <a href="#" class="test-drive-btn" style="text-align: center; padding: 18px;">Записатись на тест-драйв</a>
+                    </div>
+
+                    <!-- ВИПРАВЛЕНО: Пряме посилання замість history.back() -->
+                    <a href="{% url 'catalog' %}" class="back-to-catalog">← Повернутися до каталогу</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

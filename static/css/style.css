@@ -1,0 +1,824 @@
+/* --- ПОВНЕ СКИДАННЯ СТИЛІВ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- КОНТЕЙНЕР --- */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- ХЕДЕР ТА НАВІГАЦІЯ --- */
+.top-header {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #800000;
+    padding: 15px 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #800000;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+    position: relative;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #800000;
+}
+
+/* Випадаюче меню */
+.has-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000000;
+    min-width: 180px;
+    padding: 10px 0;
+    list-style: none;
+    border-left: 3px solid #800000;
+    margin-top: 15px;
+}
+
+/* Псевдоелемент для усунення розриву між меню і кнопкою */
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 8px 20px;
+}
+
+.dropdown-menu a {
+    font-size: 12px;
+    text-transform: none;
+    color: #cccccc;
+    display: block;
+}
+
+/* --- ГОЛОВНИЙ КОНТЕНТ ТА ФУТЕР --- */
+.main-content {
+    padding-top: 75px;
+    flex: 1 0 auto;
+}
+
+.simple-footer {
+    background-color: #000000;
+    color: #777777;
+    padding: 40px 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* --- БАНЕР (HERO SECTION) --- */
+.hero-section {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.hero-bg {
+    width: 1200px;
+    height: 550px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/static/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    border-bottom: 5px solid #800000;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #800000;
+    color: #ffffff;
+    padding: 14px 45px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #a00000;
+}
+
+/* --- СЕКЦІЯ ПЕРЕВАГ --- */
+.features-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.features-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    width: 30%;
+    text-align: center;
+}
+
+.feature-item h3 {
+    color: #800000;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.feature-item p {
+    color: #333333;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* --- КАТАЛОГ (КАРТКИ АВТО) --- */
+.catalog-page {
+    padding: 50px 0;
+}
+
+.catalog-title {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.car-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.car-card {
+    width: 380px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.car-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.no-photo {
+    width: 100%;
+    height: 260px;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0a0;
+    font-size: 16px;
+}
+
+.car-content {
+    padding: 25px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.car-country {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 15px;
+}
+
+.car-price {
+    font-size: 24px;
+    color: #800000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.test-drive-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.test-drive-btn:hover {
+    background-color: #800000;
+}
+
+/* --- СТОРІНКА КОНТАКТІВ (ОНОВЛЕНО) --- */
+.contacts-map-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 75px);
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+.map-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.contact-overlay-card {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+    padding: 60px 40px;
+    width: 450px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-overlay-card h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact-details .phone {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #800000;
+    margin: 15px 0 30px 0;
+    text-decoration: none;
+}
+
+/* Стилі для ряду іконок */
+.social-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Відступ між трьома іконками */
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s transform ease;
+}
+
+/* Колір самих символів всередині кружечків */
+.social-icon i {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+/* Кольори фону для твоїх соцмереж */
+.facebook { background-color: #1877f2; }
+.instagram { background-color: #e4405f; }
+.tiktok { background-color: #000000; }
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+.call-action-circle {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.call-action-circle:hover {
+    background-color: #800000;
+}
+
+.phone-icon {
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .contact-overlay-card {
+        width: 100%;
+        margin: 0 15px;
+        padding: 40px 20px;
+    }
+}
+/* --- БЛОК ПРО НАС (USA CARS) --- */
+.about-team-section {
+    padding: 60px 0 100px 0;
+    background-color: #ffffff;
+}
+
+.about-flex-card {
+    display: flex;
+    background-color: #fcfcfc;
+    border: 1px solid #eeeeee;
+    border-radius: 20px; /* Скруглення як на скріншоті */
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.about-text-side {
+    flex: 1;
+    padding: 60px;
+}
+
+.about-heading {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.about-heading span {
+    color: #800000;
+}
+
+.about-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-services-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-services-list li {
+    font-size: 15px;
+    color: #222;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Бордовий маркер */
+.about-services-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #800000;
+    border-radius: 50%;
+}
+
+.about-image-side {
+    flex: 1.2;
+    position: relative;
+    background-color: #000;
+}
+
+.about-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.85;
+}
+
+/* Вертикальний текст на фото */
+.image-overlay-text {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: rgba(255, 255, 255, 0.25);
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 992px) {
+    .about-flex-card {
+        flex-direction: column;
+    }
+    .about-image-side {
+        height: 300px;
+    }
+}
+/* --- СТИЛІ ДЛЯ СТОРІНКИ ТОВАРУ --- */
+.product-detail-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.product-flex {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    min-height: 550px;
+}
+
+.product-image-side {
+    flex: 1.3;
+    background-color: #f9f9f9;
+}
+
+.product-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+}
+
+.product-info-side {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-main-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-price-large {
+    font-size: 36px;
+    color: #800000;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.back-to-catalog {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.back-to-catalog:hover {
+    color: #800000;
+}
+
+/* --- МОДАЛЬНЕ ВІКНО --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: #ffffff;
+    font-size: 50px;
+    text-decoration: none;
+}
+/* --- ЗАГАЛЬНІ ЗАГОЛОВКИ СЕКЦІЙ НА ГОЛОВНІЙ --- */
+.section-heading {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 60px 0 40px 0;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* --- СЕКЦІЯ: ЧОМУ ОБИРАЮТЬ НАС --- */
+.why-us-section {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.why-us-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.why-us-item {
+    width: 45%;
+    border-left: 4px solid #800000;
+    padding-left: 20px;
+}
+
+.why-us-content h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.why-us-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- СЕКЦІЯ: КНОПКА ЗАПИСУ НА КОНСУЛЬТАЦІЮ --- */
+.consultation-cta {
+    padding: 40px 0;
+}
+
+.cta-black-box {
+    background-color: #000;
+    color: #fff;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 6px solid #800000;
+}
+
+.cta-text h3 {
+    font-size: 24px;
+    color: #800000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.cta-text p {
+    font-size: 16px;
+    color: #cccccc;
+    max-width: 550px;
+}
+
+.consult-btn {
+    background-color: #800000;
+    color: #ffffff;
+    padding: 18px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s;
+    border: none;
+    display: inline-block;
+}
+
+.consult-btn:hover {
+    background-color: #a00000;
+    color: #ffffff;
+}
+
+/* --- СТИЛІ ДЛЯ ТЕКСТОВИХ ВІДГУКІВ --- */
+.customer-reviews {
+    padding: 80px 0 100px 0;
+    background-color: #fcfcfc;
+    border-top: 1px solid #eeeeee;
+}
+
+.reviews-flex-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.review-item-card {
+    width: 500px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.review-item-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+
+.user-avatar svg {
+    width: 30px;
+    height: 30px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.review-text-content p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.review-car-tag {
+    font-size: 12px;
+    font-weight: bold;
+    color: #800000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-top: 1px solid #f4f4f4;
+    padding-top: 15px;
+}
+
+/* Адаптивність */
+@media (max-width: 992px) {
+    .reviews-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review-item-card {
+        width: 100%;
+    }
+}
+/* Кнопка написання коментаря */
+.add-review-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.write-review-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: transparent;
+    color: #800000;
+    border: 2px solid #800000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.write-review-btn:hover {
+    background-color: #800000;
+    color: #ffffff;
+}

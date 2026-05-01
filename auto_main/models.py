@@ -12,10 +12,14 @@ class Brand(models.Model):
 class CarModel(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, verbose_name="Марка")
     name = models.CharField(max_length=50, verbose_name="Назва моделі")
-    # Додали ($) в назву поля
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name="Ціна ($)")
+
+    # Додай цей рядок:
+    image = models.ImageField(upload_to='cars/', null=True, blank=True, verbose_name="Фото")
+
     description = models.TextField(default='', verbose_name="Опис")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Створено о")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Оновлено о")
 
-    def __str__(self): return self.name
+    def __str__(self):
+        return self.name
